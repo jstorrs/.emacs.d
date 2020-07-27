@@ -11,4 +11,4 @@
 
 ;; Load emacs-init.org
 (require 'org)
-(org-babel-load-file (expand-file-name "~/.emacs.d/emacs-init.org"))
+(org-babel-load-file (expand-file-name "~/.emacs.d/README.org"))
