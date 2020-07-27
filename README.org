@@ -23,7 +23,7 @@ See: [[https://protesilaos.com/dotemacs][protesilaos]]
     (setq org-indent-indentation-per-level 1)
     (setq org-adapt-indentation nil)
     (setq org-hide-emphasis-markers t)
-    (setq org-agenda-files ((concat org-directory "/todo.org")))
+    (setq org-agenda-files '("~/Org"))
     :bind (("C-c l" . org-store-link)
 	   ("C-c a" . org-agenda)
 	   ("C-c c" . org-capture)))
