@@ -1,0 +1,61 @@
+#+TITLE: Literate GNU Emacs configuration file
+
+See: [[https://protesilaos.com/dotemacs][protesilaos]]
+
+** Send customization into "custom.el"
+
+#+BEGIN_SRC emacs-lisp
+  (use-package cus-edit
+    :config
+    (setq custom-file "~/.emacs.d/custom.el")
+    (unless (file-exists-p custom-file)
+      (write-region "" nil custom-file))
+    (load custom-file))
+#+END_SRC
+
+** Org Mode
+
+#+BEGIN_SRC emacs-lisp
+  (use-package org
+    :config
+    (setq org-directory "~/Org")
+    (setq org-default-notes-file (concat org-directory "/notes.org"))
+    (setq org-indent-indentation-per-level 1)
+    (setq org-adapt-indentation nil)
+    (setq org-hide-emphasis-markers t)
+    (setq org-agenda-files ((concat org-directory "/todo.org")))
+    :bind (("C-c l" . org-store-link)
+	   ("C-c a" . org-agenda)
+	   ("C-c c" . org-capture)))
+
+  (use-package tramp :ensure)
+
+  (use-package org-mobile
+    :config
+    (setq org-mobile-directory "/davs:judd@io.storrs.net:/UnmanagedSmasherRacoon/")
+    (setq org-mobile-inbox-for-pull (concat org-mobile-directory "mobile.org")))
+
+#+END_SRC
+
+** Focused writing
+
+#+BEGIN_SRC emacs-lisp
+  (use-package olivetti
+    :ensure
+    :bind
+    ("C-c o" . olivetti-mode))
+#+END_SRC
+
+** Theme
+
+#+BEGIN_SRC emacs-lisp
+  (use-package modus-operandi-theme :ensure)
+  (use-package modus-vivendi-theme :ensure)
+  (use-package org-superstar :ensure)
+#+END_SRC
+
+** Version Control
+
+#+BEGIN_SRC emacs-lisp
+  (use-package magit :ensure)
+#+END_SRC
