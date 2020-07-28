@@ -27,14 +27,6 @@ See: [[https://protesilaos.com/dotemacs][protesilaos]]
     :bind (("C-c l" . org-store-link)
 	   ("C-c a" . org-agenda)
 	   ("C-c c" . org-capture)))
-
-  (use-package tramp :ensure)
-
-  (use-package org-mobile
-    :config
-    (setq org-mobile-directory "/davs:judd@io.storrs.net:/UnmanagedSmasherRacoon/")
-    (setq org-mobile-inbox-for-pull (concat org-mobile-directory "mobile.org")))
-
 #+END_SRC
 
 ** Focused writing
